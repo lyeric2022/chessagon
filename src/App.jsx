@@ -2,19 +2,19 @@ import React from 'react';
 import './App.scss';
 import boardImage from './assets/board.png';
 
-const WHITE_KING = "\u265A";
-const WHITE_QUEEN = "\u265B";
-const WHITE_ROOK = "\u265C";
-const WHITE_BISHOP = "\u265D";
-const WHITE_KNIGHT = "\u265E";
-const WHITE_PAWN = "\u265F";
+const WHITE_KING = "\u2654";
+const WHITE_QUEEN = "\u2655";
+const WHITE_ROOK = "\u2656";
+const WHITE_BISHOP = "\u2657";
+const WHITE_KNIGHT = "\u2658";
+const WHITE_PAWN = "\u2659";
 
-const BLACK_KING = "\u2654";
-const BLACK_QUEEN = "\u2655";
-const BLACK_ROOK = "\u2656";
-const BLACK_BISHOP = "\u2657";
-const BLACK_KNIGHT = "\u2658";
-const BLACK_PAWN = "\u2659";
+const BLACK_KING = "\u265A";
+const BLACK_QUEEN = "\u265B";
+const BLACK_ROOK = "\u265C";
+const BLACK_BISHOP = "\u265D";
+const BLACK_KNIGHT = "\u265E";
+const BLACK_PAWN = "\u265F";
 
 function generateBoard() {
   const twoDArray = [
@@ -30,37 +30,46 @@ function generateBoard() {
     Array(7).fill("\u00A0"), // Replace "\u0020" with "\u00A0"
     Array(6).fill("\u00A0") // Replace "\u0020" with "\u00A0"
   ];
-  twoDArray[0][0] = WHITE_KING;
-  twoDArray[0][1] = WHITE_KING;
-  twoDArray[0][2] = WHITE_KING;
-  twoDArray[0][3] = WHITE_KING;
-  twoDArray[0][4] = WHITE_KING;
-  twoDArray[0][5] = WHITE_KING;
 
-  twoDArray[1][0] = WHITE_KING;
-  twoDArray[2][0] = WHITE_KING;
-  twoDArray[3][0] = WHITE_KING;
-  twoDArray[4][9] = WHITE_BISHOP;
+  // pawns
+  twoDArray[1][6] = WHITE_PAWN;
+  twoDArray[2][6] = WHITE_PAWN;
+  twoDArray[3][6] = WHITE_PAWN;
+  twoDArray[4][6] = WHITE_PAWN;
+  twoDArray[5][6] = WHITE_PAWN;
+  twoDArray[6][6] = WHITE_PAWN;
+  twoDArray[7][6] = WHITE_PAWN;
+  twoDArray[8][6] = WHITE_PAWN;
+  twoDArray[9][6] = WHITE_PAWN;
 
-  twoDArray[5][0] = BLACK_KING;
-  twoDArray[5][1] = BLACK_KING;
-  twoDArray[5][2] = BLACK_KING;
-  twoDArray[5][3] = BLACK_KING;
-  twoDArray[5][4] = BLACK_KING;
-  twoDArray[5][5] = BLACK_KING;
-  twoDArray[5][6] = BLACK_KING;
-  twoDArray[5][7] = BLACK_KING;
-  twoDArray[5][8] = BLACK_KING;
-  twoDArray[5][9] = BLACK_KING;
-  twoDArray[5][10] = BLACK_KING;
+  twoDArray[1][0] = BLACK_PAWN;
+  twoDArray[2][1] = BLACK_PAWN;
+  twoDArray[3][2] = BLACK_PAWN;
+  twoDArray[4][3] = BLACK_PAWN;
+  twoDArray[5][4] = BLACK_PAWN;
+  twoDArray[6][3] = BLACK_PAWN;
+  twoDArray[7][2] = BLACK_PAWN;
+  twoDArray[8][1] = BLACK_PAWN;
+  twoDArray[9][0] = BLACK_PAWN;
 
-  twoDArray[6][0] = WHITE_KING;
-  twoDArray[7][0] = WHITE_KING;
-  twoDArray[8][0] = WHITE_KING;
-  twoDArray[9][0] = WHITE_KING;
-  twoDArray[10][0] = WHITE_KING;
+  // bishops
+  twoDArray[5][8]  = WHITE_BISHOP;
+  twoDArray[5][9]  = WHITE_BISHOP;
+  twoDArray[5][10] = WHITE_BISHOP;
 
+  twoDArray[5][0]  = BLACK_BISHOP;
+  twoDArray[5][1]  = BLACK_BISHOP;
+  twoDArray[5][2] = BLACK_BISHOP;
 
+  // knights
+  twoDArray[3][8] = WHITE_KNIGHT;
+  twoDArray[7][8] = WHITE_KNIGHT;
+  
+  twoDArray[2][7] = WHITE_ROOK;
+  twoDArray[8][7] = WHITE_ROOK;
+
+  twoDArray[4][9] = WHITE_QUEEN;
+  twoDArray[6][9] = WHITE_KING;
 
   return twoDArray;
 }
