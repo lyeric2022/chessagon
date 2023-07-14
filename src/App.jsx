@@ -65,11 +65,19 @@ function generateBoard() {
   twoDArray[3][8] = WHITE_KNIGHT;
   twoDArray[7][8] = WHITE_KNIGHT;
   
+  // rooks
   twoDArray[2][7] = WHITE_ROOK;
   twoDArray[8][7] = WHITE_ROOK;
 
+  twoDArray[2][0] = BLACK_ROOK;
+  twoDArray[8][0] = BLACK_ROOK;
+
+  // kings & queens
   twoDArray[4][9] = WHITE_QUEEN;
   twoDArray[6][9] = WHITE_KING;
+
+  twoDArray[4][0] = BLACK_QUEEN;
+  twoDArray[6][0] = BLACK_KING;
 
   return twoDArray;
 }
