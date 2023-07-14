@@ -1,0 +1,67 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* hexagon */
+
+.hexagon {
+  /* top: 30vh; */
+  /* left: 40%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: dodgerblue;
+  /* border-radius: 10px; */
+  width: 109.4px;
+  height: 63px;
+  box-sizing: border-box;
+  transition: all 1s;
+  /* border: 0.4vh solid transparent; */
+}
+
+.game-container {
+  /* position: relative; */
+}
+
+#board-image {
+  max-width: 700px;
+  max-height: auto;
+}
+
+@font-face {
+  font-family: "Pecita";
+  src: url("./assets/Pecita.ttf");
+}
+
+.pecita-font {
+  font-family: "Pecita", sans-serif;
+}
+
+.chess-piece {
+  font-size: 42.5px;
+}
+
+.pieces-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: -710px;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  width: 42px;
+}
+
+.row {
+  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 55.2px;
+}
