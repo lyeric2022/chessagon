@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './App.scss';
 import boardImage from './assets/board.png';
 
+import ChessBoard from './ChessBoard';
+
 const WHITE_KING = "\u2654";
 const WHITE_QUEEN = "\u2655";
 const WHITE_ROOK = "\u2656";
@@ -65,6 +67,9 @@ function generateBoard() {
   twoDArray[3][8] = WHITE_KNIGHT;
   twoDArray[7][8] = WHITE_KNIGHT;
   
+  twoDArray[3][0] = BLACK_KNIGHT;
+  twoDArray[7][0] = BLACK_KNIGHT;
+
   // rooks
   twoDArray[2][7] = WHITE_ROOK;
   twoDArray[8][7] = WHITE_ROOK;
@@ -83,39 +88,11 @@ function generateBoard() {
 }
 
 function App() {
-  const [selectedPiece, setSelectedPiece] = useState(null); // State to keep track of the selected piece's position
-  const gameBoard = generateBoard(); // Generate the game board with the white chess king
-
-  const handlePieceClick = (rowIndex, columnIndex) => {
-    if (selectedPiece && selectedPiece.row === rowIndex && selectedPiece.column === columnIndex) {
-      setSelectedPiece(null); // Deselect the piece if it's clicked again
-    } else {
-      setSelectedPiece({ row: rowIndex, column: columnIndex }); // Update the selected piece's position
-    }
-  };
 
   return (
     <>
       <div className='game-container'>
-        <img id='board-image' src={boardImage} alt='Chess Board' />
-        {/* Render the pieces */}
-        <div className='pieces-container'>
-          {gameBoard.map((column, columnIndex) => (
-            <div key={columnIndex} className='row'>
-              {column.map((piece, rowIndex) => (
-                <div
-                  key={rowIndex}
-                  className={`piece ${selectedPiece && selectedPiece.row === rowIndex && selectedPiece.column === columnIndex ? 'selected' : ''}`}
-                  onClick={() => handlePieceClick(rowIndex, columnIndex)}
-                >
-                  <span className="chess-piece" style={{ width: '42px', height: '42px' }}>
-                    {piece}
-                  </span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
+        <ChessBoard/>
       </div>
     </>
   );

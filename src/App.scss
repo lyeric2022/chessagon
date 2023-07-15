@@ -63,6 +63,13 @@
 }
 
 .selected {
-  outline: 2px solid #ff0000;
-  outline-offset: -2px; /* Adjust the offset to align with the element's edge */
+  outline: 3px solid #ff0000;
+  outline-offset: -3px; /* Adjust the offset to align with the element's edge */
+  outline-style: inset;
+}
+
+.possible-move {
+  outline: 2px solid #007bff;
+  outline-offset: -20px; /* Adjust the offset to align with the element's edge */
+  outline-style:dashed;
 }
